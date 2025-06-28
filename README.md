@@ -1,2 +1,2 @@
 # Tablet-Industrial-App
-A industrial application made for tablets
+An industrial application made for tablets
