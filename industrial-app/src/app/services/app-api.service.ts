@@ -14,13 +14,13 @@ export class AppApiService {
         return {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + this.auth.getToken(),
+                Authorization: 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGMwNmVmZC1hNTRhLTRhMDMtODJiOC0yYTdkNDkyMTVmZjciLCJlbWFpbCI6InJhZGNvbWhvbWVAdW9yYWsuY29tIiwidXNlcm5hbWUiOiJSREgxMDAxNzEiLCJ2aXN1YWxpemF0aW9uIjoiY29tcGFueV9hZG1pbiIsInRlbXBvcmFyeVBhc3N3b3JkIjpmYWxzZSwib3JpZ2luIjoid2ViIiwiaWF0IjoxNzUxMzQ5OTAzLCJleHAiOjE3NTE0MzYzMDN9.Hgw5FsWdsm77BS9xDfonotdcNCVPbpoJMWAkpyl6DNI',
             }),
         };
     }
 
     public getAuthorization() {
-        return 'Bearer ' + this.auth.getToken();
+        return 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MGMwNmVmZC1hNTRhLTRhMDMtODJiOC0yYTdkNDkyMTVmZjciLCJlbWFpbCI6InJhZGNvbWhvbWVAdW9yYWsuY29tIiwidXNlcm5hbWUiOiJSREgxMDAxNzEiLCJ2aXN1YWxpemF0aW9uIjoiY29tcGFueV9hZG1pbiIsInRlbXBvcmFyeVBhc3N3b3JkIjpmYWxzZSwib3JpZ2luIjoid2ViIiwiaWF0IjoxNzUxMzQ5OTAzLCJleHAiOjE3NTE0MzYzMDN9.Hgw5FsWdsm77BS9xDfonotdcNCVPbpoJMWAkpyl6DNI';
     }
 
     public tokenAuth(value: string = access_token) {

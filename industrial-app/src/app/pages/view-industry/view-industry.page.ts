@@ -96,9 +96,9 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
         this.isLoading = false;
       } else {
         this.projects = projects;
-        this.interval = setInterval(() => {
+        // this.interval = setInterval(() => {
           this.loadAssets();
-        }, 20000);
+        // }, 20000);
       }
     } catch (e) {
       console.log(e);
