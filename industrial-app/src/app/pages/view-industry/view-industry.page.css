@@ -1,0 +1,13 @@
+.card-alert {
+  width: 68px;
+  height: 25px;
+  background-color: var(--ion-color-erro-500);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

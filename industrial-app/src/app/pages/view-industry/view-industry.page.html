@@ -1,0 +1,63 @@
+<ion-header class="mobile-visible">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Visão industrial</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="web-wrapper">
+    <!-- <app-web-header
+        [iconBreadcrumb]="['ent-empresas']"
+        title="Visão Industrial"
+    ></app-web-header> -->
+    <ion-grid>
+        <!-- <ion-row style="margin-top: 36px">
+          <ion-title class="title">Buscar Orderns de Serviço</ion-title>
+      </ion-row> -->
+        <ion-row class="row-tables">
+            <ion-col
+                *ngFor="let d of dados"
+                size-md="4"
+                size-sm="6"
+                size-xs="12"
+            >
+                <ion-row>
+                    <ion-col size-md="12" size-xs="12" class="pl-none pr-none">
+                        <span
+                            class="d-flex align-items-center justify-content-between mb-md"
+                        >
+                            <div
+                                class="color-primary-700 bold d-flex align-items-center justify-content-between"
+                            >
+                                {{d?.project.item.projectName | uppercase}}
+                            </div>
+                            <div
+                                class="color-primary-700 bold d-flex align-items-center justify-content-between"
+                            >
+                                {{d?.project.item.lastRealTime === 'Não encontrado' ? 'Sem informação' :
+                                d?.project.item.lastRealTime | date: 'dd/MM/yyyy HH:mm:ss':'+0000'}}
+                            </div>
+                            <div
+                                class="card-alert"
+                                (click)="goToAlertHandling(d?.project.item.id)"
+                            >
+                                <i class="ent-type-exclamacao mr-xs" style="font-size: 20px"></i>
+                                {{d?.project.alerts}}
+                            </div>
+                        </span>
+                        <app-config-ativos
+                            *ngIf="d?.assets"
+                            title="Configurar Ativos"
+                            iconSrc="ent-tractor color-primary-50"
+                            style="min-width: 40%"
+                            [dados]="d.assets"
+                        ></app-config-ativos>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<app-overlayed-loading *ngIf="isLoading"></app-overlayed-loading>

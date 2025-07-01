@@ -1,0 +1,111 @@
+div {
+  div {
+      background: var(--ion-color-primary-600);
+      border-radius: 8px;
+      min-width: 72px;
+      border: 3px solid var(--ion-color-primary-600);
+
+      i {
+          color: var(--ion-color-primary-400);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 4.5px;
+          font-size: 40px;
+          margin-bottom: 8px;
+          font-weight: 500;
+      }
+
+      p {
+          font-size: 12px;
+          color: var(--ion-color-primary-400);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 4.5px;
+          font-weight: 500;
+      }
+
+      &.operando, &.valvula_aberta, &.ligada, &.gerador_ligado {
+          border: 3px solid var(--ion-color-primary-50);
+          background: var(--ion-color-success-500);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.ligando, &.gerador_partindo, &.partindo {
+          border: 3px solid var(--ion-color-primary-50);
+          background: var(--ion-color-warning-400);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.desligando, &.gerador_desligando {
+          border: 3px solid var(--ion-color-primary-50);
+          background: var(--ion-color-erro-400);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.parado, &.falha_partida, &.valvula_fechada, &.gerador_desligado,
+      &.falha_partida_motor, &.falha_oleo_motor, &.falha_temperatura_motor,
+      &.falha_partida_gerador, &.falha_oleo_gerador, &.falha_temperatura_gerador,
+      &.falha_comunicação_hidrômetro, &.desligada,  &.comunicação_hidrômetro_ok, &.desativado {
+          border: 3px solid var(--ion-color-primary-50);
+          // background: var(--ion-color-success-500);
+
+          p,
+          i {
+              color: var(--ion-color-primary-50);
+          }
+      }
+  }
+}
+
+.bb-one-bbb-two {
+  z-index: 2;
+
+  &::after,
+  &::before {
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      content: '';
+      bottom: 36%;
+      border-style: solid;
+      border-color: transparent;
+      overflow: hidden;
+  }
+
+  &::before {
+      left: 86px;
+      border-width: 10px 0 10px 15px;
+      border-left-color: #65717b;
+  }
+
+  &::after {
+      border-width: 10px 15px 10px 0;
+      border-right-color: #65717b;
+      right: 86px;
+  }
+}
+
+@media screen and (max-width: 1144px) {
+  .bb-one-bbb-two {
+      &::after,
+      &::before {
+          display: none!important;
+      }
+  }
+
+}

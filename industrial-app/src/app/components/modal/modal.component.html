@@ -1,0 +1,35 @@
+<div class="dialog">
+    <ion-img [src]="data.icon"></ion-img>
+    <h1
+        mat-dialog-title
+        [style]="data.text ? 'margin: 16px 0; font-size: 24px' : ''"
+    >
+        {{ data.title }}
+    </h1>
+    <div mat-dialog-content *ngIf="data.text" style="margin-bottom: 16px">
+        {{ data.text }}
+    </div>
+    <ion-row
+        mat-dialog-actions
+        *ngIf="data.hasButton && data.isConfirmationModal"
+    >
+        <ion-col mat-dialog-close>
+            <app-button title="Confirmar" btnStyle="primary"></app-button>
+        </ion-col>
+    </ion-row>
+    <ion-row
+        mat-dialog-actions
+        *ngIf="data.hasButton && !data.isConfirmationModal"
+    >
+        <ion-col mat-dialog-close>
+            <app-button title="Cancelar"></app-button>
+        </ion-col>
+        <ion-col [mat-dialog-close]="true" cdkFocusInitial>
+            <app-button
+                btnStyle="erro"
+                title="Deletar"
+                (click)="data.deleteFunction(data.id)"
+            ></app-button>
+        </ion-col>
+    </ion-row>
+</div>

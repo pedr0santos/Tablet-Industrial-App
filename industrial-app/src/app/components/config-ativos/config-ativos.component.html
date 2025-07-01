@@ -1,0 +1,271 @@
+<ng-container *ngIf="ativos">
+    <div class="brd-block-blue bb-one">
+        <p class="text-center">Captação</p>
+        <app-label-status-assets
+            [class]="classMBFL()"
+            [status]="statusTextMBFL()"
+            [class2]="classMGEL()"
+            [status2]="statusTextMGEL()"
+            [class3]="classHIDR()"
+            [status3]="statusTextHIDR()"
+        ></app-label-status-assets>
+        <div class="bb-block-items">
+            <app-icon-asset
+                [class]="classMBFL()"
+                [icon]="ativos[0].icon"
+                [name]="ativos[0].name"
+            ></app-icon-asset>
+            <div class="separator"></div>
+            <app-icon-asset
+                [class]="'bb-one-bbb-two ' + classMGEL()"
+                [icon]="ativos[1].icon"
+                [name]="ativos[1].name"
+            ></app-icon-asset>
+            <div class="separator"></div>
+            <app-icon-asset
+                [class]="classHIDR()"
+                [icon]="ativos[2].icon"
+                [name]="ativos[2].name"
+            ></app-icon-asset>
+        </div>
+        <div class="bb-block-data">
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[0].data?.pressureOutMel || ativos[0].data?.pressure"
+                ></app-data-asset>
+            </div>
+            <div *ngIf="!ativos[2].data?.value"></div>
+            <div>
+                <app-data-asset
+                    type=""
+                    unit=""
+                    [measurement]="valueHIDR()"
+                ></app-data-asset>
+            </div>
+        </div>
+        <div class="efeitos-border-bottom">
+            <div class="efeito-one"></div>
+        </div>
+    </div>
+    <div class="brd-block-blue bb-two">
+        <p class="text-center">Booster</p>
+        <p class="text-center" *ngIf="isManual" style="color: yellow">
+            Operando Manualmente
+        </p>
+        <app-label-status-assets
+            [class]="classMBD1()"
+            [status]="statusTextMBD1()"
+            [class2]="classMBD2()"
+            [status2]="statusTextMBD2()"
+        ></app-label-status-assets>
+        <div class="bb-block-items">
+            <app-icon-asset
+                [class]="classMBD1()"
+                [icon]="ativos[3].icon"
+                [name]="ativos[3].name"
+            ></app-icon-asset>
+            <div class="separator h12"></div>
+            <app-icon-asset
+                [class]="classMBD2()"
+                [icon]="ativos[4].icon"
+                [name]="ativos[4].name"
+            ></app-icon-asset>
+        </div>
+        <div class="bb-block-gauge">
+            <app-gauge-asset
+                [percentage]="ativos[3].data?.fuelLevel"
+                [minimum]="ativos[3].data?.minimumFuelLevel"
+            ></app-gauge-asset>
+            <app-gauge-asset
+                [percentage]="ativos[4].data?.fuelLevel"
+                [minimum]="ativos[4].data?.minimumFuelLevel"
+            ></app-gauge-asset>
+        </div>
+        <div class="bb-block-data">
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[3].data?.pressure"
+                ></app-data-asset>
+                <app-data-asset
+                    type="v"
+                    unit="rpm"
+                    [measurement]="ativos[3].data?.rpm"
+                ></app-data-asset>
+            </div>
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[4].data?.pressure"
+                ></app-data-asset>
+                <app-data-asset
+                    type="v"
+                    unit="rpm"
+                    [measurement]="ativos[4].data?.rpm"
+                ></app-data-asset>
+            </div>
+        </div>
+        <div class="efeitos-border-bottom">
+            <div class="efeito-one"></div>
+            <div class="efeito-two"></div>
+            <div class="efeito-three"></div>
+            <div class="efeito-four"></div>
+        </div>
+    </div>
+    <div class="brd-block-blue bb-three">
+        <p class="text-center">Carretéis</p>
+        <app-label-status-assets
+            [class]="classCRT1()"
+            [status]="statusTextCRT1()"
+            [class2]="classCRT2()"
+            [status2]="statusTextCRT2()"
+            [class3]="classCRT3()"
+            [status3]="statusTextCRT3()"
+        ></app-label-status-assets>
+        <div class="bb-block-items">
+            <app-icon-asset
+                [class]="classCRT1()"
+                [icon]="ativos[5].icon"
+                [name]="ativos[5].name"
+            ></app-icon-asset>
+            <app-icon-asset
+                [class]="classCRT2()"
+                [icon]="ativos[6].icon"
+                [name]="ativos[6].name"
+            ></app-icon-asset>
+            <app-icon-asset
+                [class]="classCRT3()"
+                [icon]="ativos[7].icon"
+                [name]="ativos[7].name"
+            ></app-icon-asset>
+        </div>
+        <div class="bb-block-data">
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[5].data?.pressure"
+                ></app-data-asset>
+                <app-data-asset
+                    type="v"
+                    unit="m/H"
+                    [measurement]="ativos[5].data?.hoseSpeed"
+                ></app-data-asset>
+                <app-data-asset
+                    type="m"
+                    unit="m"
+                    [measurement]="ativos[5].data?.lengthHose"
+                ></app-data-asset>
+            </div>
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[6].data?.pressure"
+                ></app-data-asset>
+                <app-data-asset
+                    type="v"
+                    unit="m/H"
+                    [measurement]="ativos[6].data?.hoseSpeed"
+                ></app-data-asset>
+                <app-data-asset
+                    type="m"
+                    unit="m"
+                    [measurement]="ativos[6].data?.lengthHose"
+                ></app-data-asset>
+            </div>
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[7].data?.pressure"
+                ></app-data-asset>
+                <app-data-asset
+                    type="v"
+                    unit="m/H"
+                    [measurement]="ativos[7].data?.hoseSpeed"
+                ></app-data-asset>
+                <app-data-asset
+                    type="m"
+                    unit="m"
+                    [measurement]="ativos[7].data?.lengthHose"
+                ></app-data-asset>
+            </div>
+        </div>
+        <div class="efeitos-border-bottom">
+            <div class="efeito-one"></div>
+            <div class="efeito-two"></div>
+            <div class="efeito-three"></div>
+        </div>
+    </div>
+    <div class="brd-block-blue bb-four">
+        <p class="text-center">Canhões</p>
+        <app-label-status-assets
+            [class]="classCNH1()"
+            [status]="statusTextCNH1()"
+            [class2]="classCNH2()"
+            [status2]="statusTextCNH2()"
+            [class3]="classCNH3()"
+            [status3]="statusTextCNH3()"
+        ></app-label-status-assets>
+        <div class="bb-block-items">
+            <app-icon-asset
+                [class]="classCNH1()"
+                [icon]="ativos[8].icon"
+                [name]="ativos[8].name"
+            ></app-icon-asset>
+            <app-icon-asset
+                [class]="classCNH2()"
+                [icon]="ativos[9].icon"
+                [name]="ativos[9].name"
+            ></app-icon-asset>
+            <app-icon-asset
+                [class]="classCNH3()"
+                [icon]="ativos[10].icon"
+                [name]="ativos[10].name"
+            ></app-icon-asset>
+        </div>
+        <div class="bb-block-data">
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[8].data?.pressure"
+                ></app-data-asset>
+            </div>
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[9].data?.pressure"
+                ></app-data-asset>
+            </div>
+            <div>
+                <app-data-asset
+                    type="p"
+                    unit="Bar"
+                    [measurement]="ativos[10].data?.pressure"
+                ></app-data-asset>
+            </div>
+        </div>
+    </div>
+    <div class="brd-block-blue bb-five">
+        <p class="text-center">Transporte</p>
+        <app-label-status-assets
+            [class]="classTRAT()"
+            [status]="statusTextTRAT()"
+            type="transport"
+        ></app-label-status-assets>
+        <div class="bb-block-items justify-content-center">
+            <app-icon-asset
+                [class]="classTRAT()"
+                [icon]="ativos[11].icon"
+                [name]="ativos[11].name"
+            ></app-icon-asset>
+        </div>
+    </div>
+</ng-container>

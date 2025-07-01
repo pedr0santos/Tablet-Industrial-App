@@ -1,0 +1,82 @@
+.bb-block-texts {
+  flex: auto;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+
+  div {
+      background: var(--ion-color-primary-600);
+      border-radius: 40px;
+      width: min-content;
+      min-width: 72px;
+      height: 36px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+          font-size: 10px;
+          color: var(--ion-color-primary-400);
+          margin-bottom: 0;
+          padding: 4px;
+          font-weight: 600;
+          text-align: center;
+          text-transform: uppercase;
+      }
+
+      &.operando, &.valvula_aberta, &.ligada, &.gerador_ligado {
+          background: var(--ion-color-success-500);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.ligando, &.gerador_partindo, &.partindo {
+          background: var(--ion-color-warning-400);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.desligando, &.gerador_desligando {
+          background: var(--ion-color-erro-400);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.parado, &.falha_partida, &.valvula_fechada, &.gerador_desligado,
+      &.falha_partida_motor, &.falha_oleo_motor, &.falha_temperatura_motor,
+      &.falha_partida_gerador, &.falha_oleo_gerador, &.falha_temperatura_gerador,
+      &.falha_comunicação_hidrômetro, &.desligada, &.comunicação_hidrômetro_ok, &.desativado {
+          background: var(--ion-color-primary-300);
+
+          p,
+          i {
+              color: var(--ion-color-primary-800);
+          }
+      }
+
+      &.falha_comunicação_hidrômetro, &.falha_temperatura_gerador, &.comunicação_hidrômetro_ok {
+          p {
+              font-size: 8px;
+          }
+      }
+  }
+}
+
+.capture,
+.capture div {
+    width: 100%;
+}
+
+.transport {
+  justify-content: center;
+}

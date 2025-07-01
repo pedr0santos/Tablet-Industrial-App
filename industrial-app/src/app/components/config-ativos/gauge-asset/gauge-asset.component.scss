@@ -1,0 +1,40 @@
+.fuel-gauge {
+    width: 72px;
+    height: 72px;
+}
+.fuel-gauge .arc {
+    fill: none;
+    stroke-width: 8;
+}
+.fuel-gauge .arc.red {
+    stroke: #ff0000;
+}
+.fuel-gauge .arc.orange {
+    stroke: #ffa500;
+}
+.fuel-gauge .arc.yellow {
+    stroke: #ffff00;
+}
+.fuel-gauge .arc.green {
+    stroke: #008000;
+}
+.fuel-gauge .pointer {
+    stroke: whitesmoke;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+.fuel-gauge .pointer-center {
+    fill: #ff0000;
+}
+.fuel-gauge .text {
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #fff; /* Texto branco para fundo escuro */
+}
+.fuel-gauge .alert {
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #ff0000; /* Texto branco para fundo escuro */
+}

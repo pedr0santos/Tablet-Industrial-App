@@ -1,0 +1,31 @@
+.data-item {
+  display: flex;
+  color: #fff;
+  margin-top: 6px;
+
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    width: 16px;
+    margin-right: 4px;
+
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+  }
+
+  &.disabled {
+    color: #65717b;
+
+    .arrow {
+      color: #65717b;
+
+      img {
+        filter: invert(45%) sepia(23%) saturate(247%) hue-rotate(165deg) brightness(91%) contrast(87%);
+      }
+    }
+  }
+}

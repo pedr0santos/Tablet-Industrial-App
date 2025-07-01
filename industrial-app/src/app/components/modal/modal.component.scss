@@ -1,0 +1,25 @@
+.dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Inter;
+    color: var(--ion-color-primary-600);
+
+    .mat-dialog-title {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        margin: 24px 0;
+    }
+
+    .mat-dialog-actions {
+        margin-bottom: 0;
+        padding: 0;
+        width: 100%;
+
+        .mat-button {
+            padding: 12px;
+        }
+    }
+}

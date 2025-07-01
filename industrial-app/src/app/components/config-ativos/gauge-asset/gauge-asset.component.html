@@ -1,0 +1,42 @@
+<svg
+    class="fuel-gauge"
+    viewBox="0 0 100 90"
+    preserveAspectRatio="xMidYMid meet"
+>
+    <!-- Segmentos coloridos do velocímetro -->
+    <path class="arc red" d="M10 50 A40 40 0 0 1 30 10" />
+    <path class="arc orange" d="M30 10 A40 40 0 0 1 50 5" />
+    <path class="arc yellow" d="M50 5 A40 40 0 0 1 70 10" />
+    <path class="arc green" d="M70 10 A40 40 0 0 1 90 50" />
+
+    <!-- Ponteiro -->
+    <line
+        x1="50"
+        y1="50"
+        x2="50"
+        y2="10"
+        [attr.transform]="transform"
+        class="pointer"
+    />
+    <circle cx="50" cy="50" r="4" class="pointer-center" />
+
+    <!-- Texto do percentual -->
+    <text class="text" x="50" y="65" text-anchor="middle">
+        combustível: {{ percentage }}%
+    </text>
+
+    <!-- Alerta de combustível baixo -->
+
+    <text
+        id="fuel-alert"
+        class="alert"
+        x="50"
+        y="82"
+        text-anchor="middle"
+        [attr.display]="display"
+        fill="red"
+        font-size="5"
+    >
+        NÍVEL BAIXO
+    </text>
+</svg>

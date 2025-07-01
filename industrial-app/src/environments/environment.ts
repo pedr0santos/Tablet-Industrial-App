@@ -6,6 +6,10 @@ export const environment = {
   production: false
 };
 
+export const BASE_URL = `https://radcomtec.com.br:4001/api`;
+export const apiUrl = `https://radcomtec.com.br:4001/api`;
+
+export const USER_SECRET = 'd72891cd-c1e8-4cce-a1a5-726678325096';
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

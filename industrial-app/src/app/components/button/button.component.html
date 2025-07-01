@@ -1,0 +1,15 @@
+<ion-button
+    fill="outline"
+    [disabled]="disabled"
+    [class]="btnStyle"
+    [type]="type"
+>
+    <ion-icon *ngIf="iconSrc" slot="start" [src]="iconSrc"></ion-icon>
+    {{title}}
+    <i
+        style="margin-left: 12px"
+        class="color-primary-500"
+        *ngIf="rightIcon"
+        [ngClass]="rightIcon"
+    ></i>
+</ion-button>

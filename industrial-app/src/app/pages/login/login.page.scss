@@ -1,0 +1,116 @@
+ion-content {
+  --background: url(../../../assets/images/login.png) 0 0/100% 100% no-repeat;
+
+
+.divSVG{
+margin-top: 100px;
+width: 100%;
+justify-content: center;
+display: flex;
+}
+
+
+  h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #ffff;
+  }
+
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: rgba(117, 117, 117, 0.086);
+    box-shadow: inset 25.5667px -25.5667px 25.5667px rgba(89, 89, 89, 0.086), inset -25.5667px 25.5667px 25.5667px rgba(255, 255, 255, 0.086);
+    backdrop-filter: blur(7.874px);
+    border-radius: 12px;
+    border:0.1px solid #FDD835;
+    padding-inline: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+
+    .form_div{
+      position: relative;
+      height: 48px;
+      width: 15rem;
+    }
+
+    .form_label {
+      position: absolute;
+      top: 0.5rem;
+      transition: 0.3s;
+    }
+
+
+
+
+  ion-item {
+    --background: rgba(117, 117, 117, 0);
+    color: white;
+    border-bottom: 1px solid white;
+  }
+
+
+
+
+      ion-input:hover + .form_label {
+        top: -8px;
+        left: 0rem;
+        color: #FDD835;
+        font-size: 0.7em;
+        font-weight: 500;
+        z-index: 10;
+      }
+
+      ion-input:valid + .form_label {
+        top: 0.4rem;
+        left: 2.7rem;
+        color: #FDD835;
+        font-size: 0.7em;
+        font-weight: 500;
+        z-index: 10;
+      }
+  }
+
+
+  .underlineHover{
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 115px;
+    height: 2px;
+    background-color: white;
+    content: '';
+    transition: width 0.2s;
+  }
+
+  .underlineHover:hover {
+    color: #FDD835;
+    cursor: pointer;
+  }
+
+  .underlineHover:hover:after {
+    width: 100%;
+    background-color: #FDD835;
+
+  }
+
+  .button{
+    margin-top: 1rem;
+    --border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="bb-block-texts" [ngClass]="type">
+    <div [ngClass]="class">
+        <p>{{ status }}</p>
+    </div>
+    <div [ngClass]="class2" *ngIf="status2">
+        <p>{{ status2 }}</p>
+    </div>
+    <div [ngClass]="class3" *ngIf="status3">
+        <p>{{ status3 }}</p>
+    </div>
+</div>
