@@ -214,3 +214,22 @@ ion-icon {
         }
     }
 }
+
+
+.modo-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+
+  .brd-block-blue {
+    min-width: 300px;
+    margin-bottom: 0; // Remove espaço vertical
+  }
+
+  .efeitos-border-bottom {
+    display: none; // Esconde os efeitos verticais
+  }
+}

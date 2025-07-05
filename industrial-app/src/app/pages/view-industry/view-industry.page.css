@@ -16,3 +16,9 @@
 .web-wrapper{
   background-color: white;
 }
+
+.row-tables {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

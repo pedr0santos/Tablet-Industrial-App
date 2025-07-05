@@ -55,6 +55,7 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
   projects: any;
   interval: any;
   isLoading: boolean | undefined;
+  selectedProjectId: string | null = null;
 
   constructor(
     // public storage: StorageService,
@@ -72,6 +73,7 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
   async ngOnInit() {
     this.unitID =
         (await Preferences.get({ key: 'unidadeId' })).value ?? undefined;
+        this.unitID = 'b950105c-7db2-4f8f-a242-b7e519e02013';
     this.isLoading = !this.viewIndustryService.hasDataLoaded();
     this.dados = this.viewIndustryService.getDataViewIndustry();
     await this.loadProjects();
@@ -147,6 +149,10 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
     });
     this.viewIndustryService.setDataViewIndustry(this.dados);
     this.isLoading = false;
+  }
+
+  selectProject(projectId: string) {
+    this.selectedProjectId = projectId;
   }
 
   openModalError(message: string) {
