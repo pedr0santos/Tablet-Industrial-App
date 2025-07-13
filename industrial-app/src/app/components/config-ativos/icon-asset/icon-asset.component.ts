@@ -16,6 +16,7 @@ export class IconAssetComponent implements OnInit {
     @Input() class: string | undefined;
     @Input() icon: string | undefined;
     @Input() name: string | undefined;
+    @Input() modoHorizontal = false;
 
     constructor() {}
 

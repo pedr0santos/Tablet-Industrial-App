@@ -10,9 +10,9 @@ div {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-top: 4.5px;
-          font-size: 40px;
-          margin-bottom: 8px;
+          margin-top: 4px;
+          font-size: 26px;
+          margin-bottom: 4px;
           font-weight: 500;
       }
 
@@ -22,7 +22,7 @@ div {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 4.5px;
+          margin: 2px 2px 2px 2px;
           font-weight: 500;
       }
 
@@ -71,6 +71,21 @@ div {
   }
 }
 
+.modo-horizontal {
+    &::after,
+  &::before {
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      content: '';
+      bottom: 53%;
+      border-style: solid;
+      border-color: transparent;
+      overflow: hidden;
+  }
+}
+
 .bb-one-bbb-two {
   z-index: 2;
 
@@ -81,7 +96,7 @@ div {
       width: 0;
       height: 0;
       content: '';
-      bottom: 36%;
+      bottom: 30%;
       border-style: solid;
       border-color: transparent;
       overflow: hidden;
@@ -108,4 +123,47 @@ div {
       }
   }
 
+}
+
+
+
+.modo-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+
+  // Remove estilos verticais
+  .brd-block-blue {
+    margin-bottom: 0 !important;
+    position: relative;
+
+    &::before,
+    .efeitos-border-bottom {
+      display: none !important;
+    }
+  }
+
+  // Linha horizontal conectando os blocos
+  &::before {
+    content: '';
+    position: absolute;
+    top: 64px; // altura entre os blocos
+    left: 0;
+    right: 0;
+    height: 12px;
+    background-color: var(--ion-color-primary-500);
+    z-index: 1;
+  }
+
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.modo-horizontal {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

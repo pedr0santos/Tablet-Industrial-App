@@ -13,8 +13,24 @@
 }
 
 
+.button{
+  width: 30%;
+}
+
+.info-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.grid{
+  padding-top: 70px;
+}
+
 .web-wrapper{
   background-color: white;
+  padding-top: 100px!important;
 }
 
 .row-tables {
@@ -22,3 +38,9 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+
+/* .row-tables-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+} */

@@ -11,10 +11,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { from, Observable, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
-import { BASE_URL } from 'src/environments/environment';
 import { AuthService } from './auth.service';
 import { Preferences } from '@capacitor/preferences';
 import { captureRejectionSymbol } from 'events';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -83,7 +83,7 @@ export class InterceptorService implements HttpInterceptor {
     const refreshToken = '';
 
     //TODO: Fazer alteração de acordo com a API quando estiver pronta
-    return this.http.post(BASE_URL + '/refreshToken', { refreshToken }).pipe(
+    return this.http.post(environment.BASE_URL + '/refreshToken', { refreshToken }).pipe(
       switchMap((res: any) => {
         //TODO: Utilizar resposta da API para o novo token
         const newToken = res.token;

@@ -149,3 +149,33 @@ div a {
 // .mat-error {
 //     color: var(--ion-color-primary-100) !important;
 // }
+
+.mdc-text-field {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.mdc-floating-label {
+  color: white !important;
+}
+
+.mdc-line-ripple {
+  background-color: white !important;
+}
+
+input.mdc-text-field__input {
+  color: white !important;
+}
+
+.mat-mdc-form-field.mat-mdc-form-field-appearance-fill .mat-mdc-form-field-flex {
+  background-color: transparent !important;
+}
+
+.mat-mdc-form-field .mdc-line-ripple::before,
+.mat-mdc-form-field .mdc-line-ripple::after {
+  background-color: white !important;
+}
+
+i{
+  font-size: 23px;
+}

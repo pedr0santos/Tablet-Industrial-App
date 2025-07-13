@@ -27,6 +27,9 @@ export class ConfigAtivosComponent implements OnInit, OnChanges {
     statusGerador = false;
 
     @Input()
+    modoHorizontal = false;
+
+    @Input()
     dados: string | undefined;
 
     public ativos: any;

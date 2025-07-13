@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BASE_URL } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class LoginService {
     console.log("body login: ",body);
     return new Promise((resolve, reject) => {
       this.http.post(
-        BASE_URL + '/login',
+        environment.BASE_URL + '/login',
         body
       ).subscribe(res => {
         console.log("res login: ",res);
@@ -30,7 +30,7 @@ export class LoginService {
   getUserById(id: string): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.get(
-        `${BASE_URL}/user/${id}`
+        `${environment.BASE_URL}/user/${id}`
       ).subscribe(res => {
         console.log("res login getUserById: ",res);
         resolve(res);
@@ -44,7 +44,7 @@ export class LoginService {
     // TODO: Confirmar implementação
     return new Promise((resolve, reject) => {
       this.http.get(
-        `${BASE_URL}/user/${token}`
+        `${environment.BASE_URL}/user/${token}`
       ).subscribe(res => {
         resolve(res);
       }, err => {
@@ -54,7 +54,7 @@ export class LoginService {
   }
 
   changePassword(id: string, body: any) {
-    return this.http.put(`${BASE_URL}/user/${id}`, body);
+    return this.http.put(`${environment.BASE_URL}/user/${id}`, body);
   }
 
 }

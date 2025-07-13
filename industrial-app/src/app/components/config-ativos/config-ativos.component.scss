@@ -1,235 +1,414 @@
 ion-button {
-    --background: var(--ion-color-tertiary-700);
-    color: white;
-    --border-radius: 4px;
-    --box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  --background: var(--ion-color-tertiary-700);
+  color: white;
+  --border-radius: 4px;
+  --box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 
-    div {
-        i {
-            flex: 0;
-        }
-
-        span {
-            flex: auto;
-        }
+  div {
+    i {
+      flex: 0;
     }
+
+    span {
+      flex: auto;
+    }
+  }
 }
 
 ion-button:hover {
-    --background: var(--ion-color-tertiary-600);
-    --box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+  --background: var(--ion-color-tertiary-600);
+  --box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
 }
 
 ion-button:active {
-    --background: var(--ion-color-tertiary-700);
+  --background: var(--ion-color-tertiary-700);
 }
 
 ion-icon {
-    zoom: 1.5;
+  zoom: 1.5;
 }
 
 .brd-block-blue {
-    background: var(--ion-color-primary-700);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 32px;
+  background: var(--ion-color-primary-700);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 32px;
 
-    p {
-        color: var(--ion-color-primary-50);
-        text-transform: uppercase;
-        font-size: 16px;
+  p {
+    color: var(--ion-color-primary-50);
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+
+  &.bb-one {
+    position: relative;
+
+    &::before {
+      // background: var(--ion-color-primary-500);
+      height: 32px;
+      display: block;
+      width: 12px;
+      background: var(--ion-color-primary-500);
+      border-right: 1px white;
+      content: "";
+      position: absolute;
+      bottom: -32px;
+      left: 48.5%;
     }
+  }
 
-    &.bb-one {
-        position: relative;
+  &.bb-two {
+    z-index: 2;
+    margin-bottom: 64px;
+    position: relative;
 
+    .efeitos-border-bottom {
+      .efeito-one {
         &::before {
-            // background: var(--ion-color-primary-500);
-            height: 32px;
-            display: block;
-            width: 12px;
-            background: var(--ion-color-primary-500);
-            border-right: 1px white;
-            content: '';
-            position: absolute;
-            bottom: -32px;
-            left: 48.5%;
+          height: 32px;
+          display: block;
+          width: 12px;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -64px;
+          left: 10.5%;
         }
-    }
+      }
 
-    &.bb-two {
-        z-index: 2;
-        margin-bottom: 64px;
-        position: relative;
-
-        .efeitos-border-bottom {
-            .efeito-one {
-                &::before {
-                    height: 32px;
-                    display: block;
-                    width: 12px;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -64px;
-                    left: 10.5%;
-                }
-            }
-
-            .efeito-two {
-                &::before {
-                    height: 64px;
-                    display: block;
-                    width: 12px;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -64px;
-                    left: 48.5%;
-                }
-            }
-
-            .efeito-three {
-                &::before {
-                    height: 32px;
-                    display: block;
-                    width: 12px;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -64px;
-                    right: 10.5%;
-                }
-            }
-
-            .efeito-four {
-                &::before {
-                    height: 12px;
-                    display: block;
-                    width: 79%;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -40px;
-                    right: 10.5%;
-                }
-            }
+      .efeito-two {
+        &::before {
+          height: 64px;
+          display: block;
+          width: 12px;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -64px;
+          left: 48.5%;
         }
-    }
+      }
 
-    &.bb-three {
-        position: relative;
-        z-index: 2;
-
-        .efeitos-border-bottom {
-            .efeito-one {
-                &::before {
-                    height: 32px;
-                    display: block;
-                    width: 12px;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -32px;
-                    left: 10.5%;
-                }
-            }
-
-            .efeito-two {
-                &::before {
-                    height: 32px;
-                    display: block;
-                    width: 12px;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -32px;
-                    left: 48.5%;
-                }
-            }
-
-            .efeito-three {
-                &::before {
-                    height: 32px;
-                    display: block;
-                    width: 12px;
-                    background: var(--ion-color-primary-500);
-                    border-right: 1px white;
-                    content: '';
-                    position: absolute;
-                    bottom: -32px;
-                    right: 10.5%;
-                }
-            }
+      .efeito-three {
+        &::before {
+          height: 32px;
+          display: block;
+          width: 12px;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -64px;
+          right: 10.5%;
         }
-    }
+      }
 
-    .bb-block-items {
-        flex: auto;
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
-
-        .separator {
-            flex-grow: 1;
-            border: 3px solid #65717b;
-
-            &.h12 {
-                border: 6px solid #65717b;
-            }
+      .efeito-four {
+        &::before {
+          height: 12px;
+          display: block;
+          width: 79%;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -40px;
+          right: 10.5%;
         }
+      }
     }
+  }
 
-    .bb-block-data {
-        flex: auto;
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
-        margin-top: 10px;
+  &.bb-three {
+    position: relative;
+    z-index: 2;
 
-        div {
-            min-width: 72px;
+    .efeitos-border-bottom {
+      .efeito-one {
+        &::before {
+          height: 32px;
+          display: block;
+          width: 12px;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -32px;
+          left: 10.5%;
         }
-    }
+      }
 
-    .bb-block-gauge {
-        flex: auto;
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
+      .efeito-two {
+        &::before {
+          height: 32px;
+          display: block;
+          width: 12px;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -32px;
+          left: 48.5%;
+        }
+      }
+
+      .efeito-three {
+        &::before {
+          height: 32px;
+          display: block;
+          width: 12px;
+          background: var(--ion-color-primary-500);
+          border-right: 1px white;
+          content: "";
+          position: absolute;
+          bottom: -32px;
+          right: 10.5%;
+        }
+      }
     }
+  }
+
+  .bb-block-items {
+    flex: auto;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    .separator {
+      flex-grow: 1;
+      border: 3px solid #65717b;
+
+      &.h12 {
+        border: 6px solid #65717b;
+      }
+    }
+  }
+
+  .bb-block-data {
+    flex: auto;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+
+    div {
+      min-width: 72px;
+    }
+  }
+
+  .bb-block-gauge {
+    flex: auto;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+  }
 }
 
 @media screen and (max-width: 1144px) {
-    .bbb-two {
-        &::after,
-        &::before {
-            display: none !important;
-        }
+  .bbb-two {
+    &::after,
+    &::before {
+      display: none !important;
     }
+  }
 }
 
-
 .modo-horizontal {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 0.8rem; /* aumenta o gap vertical */
+  column-gap: 2rem; /* reduz o gap horizontal */
 
   .brd-block-blue {
-    min-width: 300px;
-    margin-bottom: 0; // Remove espaço vertical
+    min-width: 360px;
+    margin-bottom: 0 !important;
+    flex-shrink: 0;
   }
 
-  .efeitos-border-bottom {
-    display: none; // Esconde os efeitos verticais
+  .brd-block-blue {
+    background: var(--ion-color-primary-700);
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    // margin-right: 32px;
+
+    p {
+      color: var(--ion-color-primary-50);
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+  &::before {
+      // background: var(--ion-color-primary-500);
+      // height: 32px;
+      // display: block;
+      // width: 12px;
+      // background: var(--ion-color-primary-500);
+      // border-right: 1px white;
+      // content: "";
+      // position: absolute;
+      // bottom: -32px;
+      // left: 48.5%;
+      display: none;
+    }
+
+    &.bb-two {
+      z-index: 2;
+      position: relative;
+
+
+      .efeitos-border-bottom {
+        .efeito-one {
+          &::before {
+            display: none;
+          }
+        }
+
+        .efeito-two {
+          &::before {
+            // height: 12px;
+            // display: block;
+            // width: 64px;
+            // background: var(--ion-color-primary-500);
+            // border-right: 1px white;
+            // content: "";
+            // position: absolute;
+            // bottom: 132px;
+            // left: 100%;
+            display: none;
+          }
+        }
+
+        .efeito-three {
+          &::before {
+            // height: 12px;
+            // display: block;
+            // width: 32px;
+            // background: var(--ion-color-primary-500);
+            // border-right: 1px white;
+            // content: "";
+            // position: absolute;
+            // bottom: 20px;
+            // right: -21.5%;
+            display: none;
+          }
+        }
+
+        .efeito-four {
+          &::before {
+            // height: 79%;
+            // display: block;
+            // width: 12px;
+            // background: var(--ion-color-primary-500);
+            // border-right: 1px white;
+            // content: "";
+            // position: absolute;
+            // bottom: 20px;
+            // right: -12.5%;
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.bb-four {
+      position: relative;
+      height: 85%;
+    }
+
+    &.bb-three {
+      position: relative;
+      z-index: 2;
+      height: 85%;
+
+      .efeitos-border-bottom {
+        .efeito-one {
+          &::before {
+            // height: 12px;
+            // display: block;
+            // width: 32px;
+            // background: var(--ion-color-primary-500);
+            // border-right: 1px white;
+            // content: "";
+            // position: absolute;
+            // bottom: 242px;
+            // left: 100%;
+            display: none;
+          }
+        }
+
+        .efeito-two {
+          &::before {
+            // height: 12px;
+            // display: block;
+            // width: 32px;
+            // background: var(--ion-color-primary-500);
+            // border-right: 1px white;
+            // content: "";
+            // position: absolute;
+            // bottom: 20px;
+            // left: 100%;
+            display: none;
+          }
+        }
+
+        .efeito-three {
+          &::before {
+              // height: 12px;
+              // display: block;
+              // width: 32px;
+              // background: var(--ion-color-primary-500);
+              // border-right: 1px white;
+              // content: "";
+              // position: absolute;
+              // bottom: 132px;
+              // right: -10.5%;
+              display: none;
+          }
+        }
+      }
+    }
+
+    .bb-block-items {
+      flex: auto;
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+
+      .separator {
+        flex-grow: 1;
+        border: 3px solid #65717b;
+
+        &.h12 {
+          border: 6px solid #65717b;
+        }
+      }
+    }
+
+    .bb-block-data {
+      flex: auto;
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+      margin-top: 0px;
+
+      div {
+        min-width: 72px;
+      }
+    }
+
+    .bb-block-gauge {
+      flex: auto;
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+    }
+
+    // .bb-four{
+    //   height: 85%;
+    // }
   }
 }

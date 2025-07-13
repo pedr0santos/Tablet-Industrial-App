@@ -26,6 +26,7 @@ import { MonitoringService } from 'src/app/services/monitoring.service';
 import { Preferences } from '@capacitor/preferences';
 import { ConfigAtivosComponent } from 'src/app/components/config-ativos/config-ativos.component';
 import { OverlayedLoadingComponent } from 'src/app/components/overlayed-loading/overlayed-loading.component';
+import { ButtonComponent } from 'src/app/components/button/button.component';
 
 @Component({
   selector: 'app-view-industry',
@@ -45,7 +46,8 @@ import { OverlayedLoadingComponent } from 'src/app/components/overlayed-loading/
     MatTableModule,
     MatPaginatorModule,
     ConfigAtivosComponent,
-    OverlayedLoadingComponent
+    OverlayedLoadingComponent,
+    ButtonComponent
   ],
 })
 export class ViewIndustryPage implements OnInit, OnDestroy {
@@ -76,6 +78,7 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
         this.unitID = 'b950105c-7db2-4f8f-a242-b7e519e02013';
     this.isLoading = !this.viewIndustryService.hasDataLoaded();
     this.dados = this.viewIndustryService.getDataViewIndustry();
+    console.log(this.dados)
     await this.loadProjects();
   }
 
@@ -148,6 +151,7 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
       }
     });
     this.viewIndustryService.setDataViewIndustry(this.dados);
+    console.log(this.dados)
     this.isLoading = false;
   }
 

@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'enalta';
+    src: url('fonts/enalta.eot?rq8hca');
+    src: url('fonts/enalta.eot?rq8hca#iefix') format('embedded-opentype'),
+        url('fonts/enalta.ttf?rq8hca') format('truetype'),
+        url('fonts/enalta.woff?rq8hca') format('woff'),
+        url('fonts/enalta.svg?rq8hca#enalta') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^='ent-'],
+[class*=' ent-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'enalta' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ent-bell:before {
+    content: '\e900';
+}
+.ent-info:before {
+    content: '\e901';
+}
+.ent-padlock:before {
+    content: '\e903';
+}
+.ent-bomba-Flutuante:before {
+    content: '\e904';
+}
+.ent-canho:before {
+    content: '\e905';
+}
+.ent-carretel:before {
+    content: '\e906';
+}
+.ent-client:before {
+    content: '\e907';
+}
+.ent-collapse:before {
+    content: '\e908';
+}
+.ent-configuracoes:before {
+    content: '\e90a';
+}
+.ent-contas:before {
+    content: '\e90b';
+}
+.ent-error .path1:before {
+    content: '\e90d';
+    color: rgb(255, 255, 255);
+}
+.ent-error .path2:before {
+    content: '\e90e';
+    margin-left: -1em;
+    color: rgb(30, 47, 56);
+}
+.ent-expand:before {
+    content: '\e90f';
+}
+.ent-gerador:before {
+    content: '\e910';
+}
+.ent-hidrmetro:before {
+    content: '\e911';
+}
+.ent-menu:before {
+    content: '\e912';
+}
+.ent-motobomba-diesel:before {
+    content: '\e913';
+}
+.ent-notf-2 .path1:before {
+    content: '\e914';
+    color: rgb(30, 47, 56);
+}
+.ent-notf-2 .path2:before {
+    content: '\e915';
+    margin-left: -1em;
+    color: rgb(255, 61, 113);
+}
+.ent-notf:before {
+    content: '\e916';
+}
+.ent-operacoes:before {
+    content: '\e917';
+}
+.ent-ordem:before {
+    content: '\e918';
+}
+.ent-painel:before {
+    content: '\e91a';
+}
+.ent-perfil:before {
+    content: '\e91c';
+}
+.ent-projeto-novo:before {
+    content: '\e91d';
+}
+.ent-projeto:before {
+    content: '\e91e';
+}
+.ent-relatorio:before {
+    content: '\e91f';
+}
+.ent-sair:before {
+    content: '\e920';
+}
+.ent-signature:before {
+    content: '\e922';
+}
+.ent-time .path1:before {
+    content: '\e925';
+    color: rgb(30, 47, 56);
+}
+.ent-time .path2:before {
+    content: '\e927';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+.ent-time .path3:before {
+    content: '\e928';
+    margin-left: -1em;
+    color: rgb(255, 255, 255);
+}
+.ent-variant .path1:before {
+    content: '\e929';
+    color: rgb(255, 255, 255);
+}
+.ent-variant .path2:before {
+    content: '\e92a';
+    margin-left: -1em;
+    color: rgb(30, 47, 56);
+}
+.ent-warning .path1:before {
+    content: '\e92b';
+    color: rgb(255, 255, 255);
+}
+.ent-warning .path2:before {
+    content: '\e92c';
+    margin-left: -1em;
+    color: rgb(30, 47, 56);
+}
+.ent-type-exclamacao:before {
+    content: '\e92d';
+}
+.ent-type-interrogacao:before {
+    content: '\e92e';
+}
+.ent-add-account:before {
+    content: '\e92f';
+}
+.ent-admins:before {
+    content: '\e930';
+}
+.ent-back:before {
+    content: '\e931';
+}
+.ent-close:before {
+    content: '\e932';
+}
+.ent-date:before {
+    content: '\e933';
+}
+.ent-dropdown:before {
+    content: '\e934';
+}
+.ent-dropup:before {
+    content: '\e935';
+}
+.ent-edit:before {
+    content: '\e936';
+}
+.ent-empresas:before {
+    content: '\e937';
+}
+.ent-filter:before {
+    content: '\e938';
+}
+.ent-group-users:before {
+    content: '\e939';
+}
+.ent-help:before {
+    content: '\e93a';
+}
+.ent-hide:before {
+    content: '\e93b';
+}
+.ent-iot:before {
+    content: '\e93c';
+}
+.ent-load:before {
+    content: '\e93d';
+}
+.ent-log:before {
+    content: '\e93e';
+}
+.ent-logs:before {
+    content: '\e93f';
+}
+.ent-TypePadlock:before {
+    content: '\e940';
+}
+.ent-plus:before {
+    content: '\e941';
+}
+.ent-radio:before {
+    content: '\e942';
+}
+.ent-search:before {
+    content: '\e943';
+}
+.ent-send:before {
+    content: '\e944';
+}
+.ent-setting:before {
+    content: '\e945';
+}
+.ent-setup:before {
+    content: '\e946';
+}
+.ent-signal:before {
+    content: '\e947';
+}
+.ent-tractor:before {
+    content: '\e948';
+}
+.ent-trash:before {
+    content: '\e949';
+}
+.ent-trash-clean:before {
+    content: '\e94a';
+}
+.ent-arrow-left:before {
+    content: '\e94b';
+}
+.ent-user:before {
+    content: '\e94c';
+}
+.ent-view:before {
+    content: '\e94d';
+}
+.ent-aceite:before {
+    content: '\e902';
+    color: #454545;
+}
+.ent-campo:before {
+    content: '\e909';
+    color: #454545;
+}
+.ent-certo:before {
+    content: '\e90c';
+    color: #364752;
+}
+.ent-imagem:before {
+    content: '\e919';
+    color: #454545;
+}
+.ent-keys:before {
+    content: '\e91b';
+    color: #454545;
+}
+.ent-save-nuvem:before {
+    content: '\e926';
+    color: #454545;
+}
+.ent-minus:before {
+    content: '\ea0b';
+}
+.ent-chart-bar:before { content: '\e800'; color: #454545; }

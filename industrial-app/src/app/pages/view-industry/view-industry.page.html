@@ -1,50 +1,55 @@
 <ion-header class="mobile-visible">
-  <ion-toolbar>
+  <!-- <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Visão industrial</ion-title>
-  </ion-toolbar>
+  </ion-toolbar> -->
 </ion-header>
 
-<ion-content class="web-wrapper">
-  <ion-row *ngIf="selectedProjectId">
+
+<ion-content class="web-wrapper" fullscreen="true">
+  <ion-row *ngIf="selectedProjectId" class="button">
     <ion-col size="12" class="text-right">
-      <button ion-button color="light" (click)="selectedProjectId = null">
-        Ver todos os projetos
-      </button>
+      <!-- <app-button btnStyle="primary" title="Ver todos os projetos" (click)="selectedProjectId = null"
+          *ngIf="!isLoading"></app-button> -->
     </ion-col>
   </ion-row>
   <!-- <app-web-header
         [iconBreadcrumb]="['ent-empresas']"
         title="Visão Industrial"
     ></app-web-header> -->
-  <ion-grid>
+  <ion-grid [ngClass]="selectedProjectId ? '' : 'grid'">
     <!-- <ion-row style="margin-top: 36px">
           <ion-title class="title">Buscar Orderns de Serviço</ion-title>
       </ion-row> -->
-    <ion-row class="row-tables" justify-content-center>
-      <ion-col  *ngFor="let d of dados"
-        [hidden]="selectedProjectId && d?.project.item.id !== selectedProjectId" size-md="4" size-sm="6" size-xs="12"
-        (click)="selectProject(d?.project.item.id)">
+    <ion-row [ngClass]="selectedProjectId ? 'row-tables-horizontal' : 'row-tables'" justify-content-center>
+      <ion-col *ngFor="let d of dados" [hidden]="selectedProjectId && d?.project.item.id !== selectedProjectId"
+        size-md="4" size-sm="6" size-xs="12" (click)="selectProject(d?.project.item.id)">
         <ion-row>
           <ion-col size-md="12" size-xs="12" class="pl-none pr-none">
-            <span class="d-flex align-items-center justify-content-between mb-md">
-              <div class="color-primary-700 bold d-flex align-items-center justify-content-between">
-                {{d?.project.item.projectName | uppercase}}
-              </div>
-              <div class="color-primary-700 bold d-flex align-items-center justify-content-between">
-                {{d?.project.item.lastRealTime === 'Não encontrado' ? 'Sem informação' :
-                d?.project.item.lastRealTime | date: 'dd/MM/yyyy HH:mm:ss':'+0000'}}
-              </div>
-              <div class="card-alert" (click)="goToAlertHandling(d?.project.item.id)">
+            <div class="info-top">
+              <span class="d-flex align-items-center justify-content-between mb-md">
+                <div class="color-primary-700 bold d-flex align-items-center justify-content-between">
+                  {{d?.project.item.projectName | uppercase}}
+                </div>
+                <div class="color-primary-700 bold d-flex align-items-center justify-content-between">
+                  {{d?.project.item.lastRealTime === 'Não encontrado' ? 'Sem informação' :
+                  d?.project.item.lastRealTime | date: 'dd/MM/yyyy HH:mm:ss':'+0000'}}
+                </div>
+                <!-- <div class="card-alert" (click)="goToAlertHandling(d?.project.item.id)">
                 <i class="ent-type-exclamacao mr-xs" style="font-size: 20px"></i>
                 {{d?.project.alerts}}
-              </div>
-            </span>
-            <app-config-ativos *ngIf="d?.assets" title="Configurar Ativos" iconSrc="ent-tractor color-primary-50"
-              style="min-width: 40%" [dados]="d.assets"></app-config-ativos>
+              </div> -->
+              </span>
+              <app-button btnStyle="primary" title="Ver todos os projetos"
+                *ngIf="selectedProjectId === d?.project.item.id && !isLoading"
+                (click)="selectedProjectId = null; $event.stopPropagation()">></app-button>
+            </div>
+            <app-config-ativos *ngIf="d?.assets" [modoHorizontal]="selectedProjectId !== null" title="Configurar Ativos"
+              iconSrc="ent-tractor color-primary-50" style="min-width: 40%" [dados]="d.assets"></app-config-ativos>
           </ion-col>
+
         </ion-row>
       </ion-col>
     </ion-row>

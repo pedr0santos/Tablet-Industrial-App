@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs';
 import { AppApiService } from './app-api.service';
-import { BASE_URL } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 //const urlPins = 'http://gaussiantec.com.br:3000';
 //const urlPins = 'http://localhost:3000';
@@ -39,7 +39,7 @@ export class MonitoringService {
         };
 
         return this.http
-            .post<any>(`${BASE_URL}/upload-geo`, formData, httpOptions)
+            .post<any>(`${environment.BASE_URL}/upload-geo`, formData, httpOptions)
             .toPromise();
     }
 
@@ -48,14 +48,14 @@ export class MonitoringService {
     //primeiro lng, segundo lat
     public async getGeoLocation(id: string): Promise<any> {
         return this.http
-            .get<any>(`${BASE_URL}/geolocation/${id}`, this.appApi.getHeaders())
+            .get<any>(`${environment.BASE_URL}/geolocation/${id}`, this.appApi.getHeaders())
             .toPromise();
     }
 
     public async getGeoLocationByFarm(farmId: string): Promise<any> {
         return this.http
             .get<any>(
-                `${BASE_URL}/geolocation/farm/${farmId}`,
+                `${environment.BASE_URL}/geolocation/farm/${farmId}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -64,7 +64,7 @@ export class MonitoringService {
     public async getGeoLocationList(id: string): Promise<any> {
         return this.http
             .get<any>(
-                `${BASE_URL}/geolocation/unit/${id}`,
+                `${environment.BASE_URL}/geolocation/unit/${id}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -73,7 +73,7 @@ export class MonitoringService {
     public async getProjects(unitId: string): Promise<any> {
         return this.http
             .get<any>(
-                `${BASE_URL}/unit/${unitId}/projectList`,
+                `${environment.BASE_URL}/unit/${unitId}/projectList`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -81,14 +81,14 @@ export class MonitoringService {
 
     public async getProject(id: string): Promise<any> {
         return this.http
-            .get<any>(`${BASE_URL}/project/${id}`, this.appApi.getHeaders())
+            .get<any>(`${environment.BASE_URL}/project/${id}`, this.appApi.getHeaders())
             .toPromise();
     }
 
     public async getIrrigationLines(id: string): Promise<any> {
         return this.http
             .get<any>(
-                `${BASE_URL}/farm/irrigation-lines/${id}`,
+                `${environment.BASE_URL}/farm/irrigation-lines/${id}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -107,7 +107,7 @@ export class MonitoringService {
         queryParams = queryParams.append('endDate', end);
         return this.http
             .get<any>(
-                `${BASE_URL}/spool-reports/${projectId}/${spoolId}/${genId}`,
+                `${environment.BASE_URL}/spool-reports/${projectId}/${spoolId}/${genId}`,
                 { params: queryParams }
             )
             .toPromise();
@@ -123,7 +123,7 @@ export class MonitoringService {
         queryParams = queryParams.append('startDate', start);
         queryParams = queryParams.append('endDate', end);
         return this.http
-            .get<any>(`${BASE_URL}/project-reports/${projectId}/${genId}`, {
+            .get<any>(`${environment.BASE_URL}/project-reports/${projectId}/${genId}`, {
                 params: queryParams,
             })
             .toPromise();
@@ -142,7 +142,7 @@ export class MonitoringService {
         queryParams = queryParams.append('endDate', end);
         return this.http
             .get<any>(
-                `${BASE_URL}/motor-reports/${projectId}/${spoolId}/${genId}/${motorId}`,
+                `${environment.BASE_URL}/motor-reports/${projectId}/${spoolId}/${genId}/${motorId}`,
                 { params: queryParams }
             )
             .toPromise();
@@ -164,7 +164,7 @@ export class MonitoringService {
         if (type === 'MBD1' || type === 'MBD2') {
             return this.http
                 .get<any>(
-                    `${BASE_URL}/tele-motor-reports/${projectId}/${spoolId}`,
+                    `${environment.BASE_URL}/tele-motor-reports/${projectId}/${spoolId}`,
                     {
                         params: queryParams,
                     }
@@ -172,7 +172,7 @@ export class MonitoringService {
                 .toPromise();
         } else {
             return this.http
-                .get<any>(`${BASE_URL}/tele-reports/${projectId}/${spoolId}`, {
+                .get<any>(`${environment.BASE_URL}/tele-reports/${projectId}/${spoolId}`, {
                     params: queryParams,
                 })
                 .toPromise();
@@ -188,7 +188,7 @@ export class MonitoringService {
         queryParams = queryParams.append('startDate', start);
         queryParams = queryParams.append('endDate', end);
         return this.http
-            .get<any>(`${BASE_URL}/insights/${projectId}`, {
+            .get<any>(`${environment.BASE_URL}/insights/${projectId}`, {
                 params: queryParams,
             })
             .toPromise();
@@ -206,7 +206,7 @@ export class MonitoringService {
         };
         return this.http
             .post<any>(
-                `${BASE_URL}/monitoring-reports/project`,
+                `${environment.BASE_URL}/monitoring-reports/project`,
                 body,
                 this.appApi.getHeaders()
             )
@@ -228,7 +228,7 @@ export class MonitoringService {
         };
         return this.http
             .post<any>(
-                `${BASE_URL}/monitoring-reports/spool`,
+                `${environment.BASE_URL}/monitoring-reports/spool`,
                 body,
                 this.appApi.getHeaders()
             )
@@ -250,7 +250,7 @@ export class MonitoringService {
         };
         return this.http
             .post<any>(
-                `${BASE_URL}/monitoring-reports/machine`,
+                `${environment.BASE_URL}/monitoring-reports/machine`,
                 body,
                 this.appApi.getHeaders()
             )
@@ -260,7 +260,7 @@ export class MonitoringService {
     public async getAssetGPS(projectId: string) {
         return this.http
             .get<any>(
-                `${BASE_URL}/realTimeAssetLastGPS/${projectId}`,
+                `${environment.BASE_URL}/realTimeAssetLastGPS/${projectId}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -269,7 +269,7 @@ export class MonitoringService {
     public async getProjectGPS(projectId: string) {
         return this.http
             .get<any>(
-                `${BASE_URL}/realTimeAssetProjectGPS/${projectId}`,
+                `${environment.BASE_URL}/realTimeAssetProjectGPS/${projectId}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -278,7 +278,7 @@ export class MonitoringService {
     public async getMonitoringReportProjectMap(projectId: string) {
         return this.http
             .get<any>(
-                `${BASE_URL}/monitoring-reports/projectMap/${projectId}`,
+                `${environment.BASE_URL}/monitoring-reports/projectMap/${projectId}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -287,7 +287,7 @@ export class MonitoringService {
     public async getMonitoringReportProjectMapAbas(projectId: string) {
         return this.http
             .get<any>(
-                `${BASE_URL}/monitoring-shifts-project/${projectId}`,
+                `${environment.BASE_URL}/monitoring-shifts-project/${projectId}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -296,7 +296,7 @@ export class MonitoringService {
     public async getCannonTraces(projectId: string) {
         return this.http
             .get<any>(
-                `${BASE_URL}/monitoring-cannon-traces/list-today/${projectId}`,
+                `${environment.BASE_URL}/monitoring-cannon-traces/list-today/${projectId}`,
                 this.appApi.getHeaders()
             )
             .toPromise();
@@ -305,7 +305,7 @@ export class MonitoringService {
     public async getCannonTracesWithInterval(projectId: string, dateStart: string, dateEnd: string) {
         return await this.http
             .get<any>(
-                `${BASE_URL}/monitoring-cannon-traces/list/${projectId}/${dateStart} 00:00:00/${dateEnd} 23:59:59`,
+                `${environment.BASE_URL}/monitoring-cannon-traces/list/${projectId}/${dateStart} 00:00:00/${dateEnd} 23:59:59`,
                 this.appApi.getHeaders()
             )
             .toPromise();

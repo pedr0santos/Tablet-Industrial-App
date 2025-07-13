@@ -1,7 +1,7 @@
-
+<div [ngClass]="{ 'modo-horizontal': modoHorizontal }">
 <ng-container *ngIf="ativos">
     <div class="brd-block-blue bb-one">
-        <p class="text-center">Captação</p>
+        <p style="margin: 4px 4px;" class="text-center">Captação</p>
         <app-label-status-assets
             [class]="classMBFL()"
             [status]="statusTextMBFL()"
@@ -12,18 +12,21 @@
         ></app-label-status-assets>
         <div class="bb-block-items">
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classMBFL()"
                 [icon]="ativos[0].icon"
                 [name]="ativos[0].name"
             ></app-icon-asset>
             <div class="separator"></div>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="'bb-one-bbb-two ' + classMGEL()"
                 [icon]="ativos[1].icon"
                 [name]="ativos[1].name"
             ></app-icon-asset>
             <div class="separator"></div>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classHIDR()"
                 [icon]="ativos[2].icon"
                 [name]="ativos[2].name"
@@ -51,7 +54,7 @@
         </div>
     </div>
     <div class="brd-block-blue bb-two">
-        <p class="text-center">Booster</p>
+        <p style="margin: 4px 4px;" class="text-center">Booster</p>
         <p class="text-center" *ngIf="isManual" style="color: yellow">
             Operando Manualmente
         </p>
@@ -63,12 +66,14 @@
         ></app-label-status-assets>
         <div class="bb-block-items">
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classMBD1()"
                 [icon]="ativos[3].icon"
                 [name]="ativos[3].name"
             ></app-icon-asset>
             <div class="separator h12"></div>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classMBD2()"
                 [icon]="ativos[4].icon"
                 [name]="ativos[4].name"
@@ -118,7 +123,7 @@
         </div>
     </div>
     <div class="brd-block-blue bb-three">
-        <p class="text-center">Carretéis</p>
+        <p style="margin: 4px 4px;" class="text-center">Carretéis</p>
         <app-label-status-assets
             [class]="classCRT1()"
             [status]="statusTextCRT1()"
@@ -129,16 +134,19 @@
         ></app-label-status-assets>
         <div class="bb-block-items">
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classCRT1()"
                 [icon]="ativos[5].icon"
                 [name]="ativos[5].name"
             ></app-icon-asset>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classCRT2()"
                 [icon]="ativos[6].icon"
                 [name]="ativos[6].name"
             ></app-icon-asset>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classCRT3()"
                 [icon]="ativos[7].icon"
                 [name]="ativos[7].name"
@@ -204,7 +212,7 @@
         </div>
     </div>
     <div class="brd-block-blue bb-four">
-        <p class="text-center">Canhões</p>
+        <p style="margin: 4px 4px;" class="text-center">Canhões</p>
         <app-label-status-assets
             [class]="classCNH1()"
             [status]="statusTextCNH1()"
@@ -215,16 +223,19 @@
         ></app-label-status-assets>
         <div class="bb-block-items">
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classCNH1()"
                 [icon]="ativos[8].icon"
                 [name]="ativos[8].name"
             ></app-icon-asset>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classCNH2()"
                 [icon]="ativos[9].icon"
                 [name]="ativos[9].name"
             ></app-icon-asset>
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classCNH3()"
                 [icon]="ativos[10].icon"
                 [name]="ativos[10].name"
@@ -254,7 +265,7 @@
             </div>
         </div>
     </div>
-    <div class="brd-block-blue bb-five">
+    <!-- <div class="brd-block-blue bb-five">
         <p class="text-center">Transporte</p>
         <app-label-status-assets
             [class]="classTRAT()"
@@ -263,10 +274,12 @@
         ></app-label-status-assets>
         <div class="bb-block-items justify-content-center">
             <app-icon-asset
+                [modoHorizontal]="modoHorizontal"
                 [class]="classTRAT()"
                 [icon]="ativos[11].icon"
                 [name]="ativos[11].name"
             ></app-icon-asset>
         </div>
-    </div>
+    </div> -->
 </ng-container>
+</div>
