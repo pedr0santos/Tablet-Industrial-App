@@ -102,57 +102,55 @@ export class ViewIndustryPage implements OnInit, OnDestroy {
       } else {
         this.projects = projects;
         // this.interval = setInterval(() => {
-          this.loadAssets();
+          await this.loadAssets();
         // }, 20000);
       }
     } catch (e) {
       console.log(e);
+      this.isLoading = false;
     }
   }
 
   async loadAssets() {
-    await this.projects.forEach(async (project: any, index: any) => {
-      try {
-        const lastRealTime = await this.realtimeService.getLastRealTime(
-          project.item.id
-        );
-        // console.log('LASTREALTIME ->', lastRealTime);
-        if (lastRealTime !== undefined && lastRealTime !== null) {
-          project.item.lastRealTime = lastRealTime.project.lastRealTime;
-        }
-        let pjAssetsId = [];
-        const pjAssets = await this.realtimeService.getProjectAssets(
-          project.item.id
-        );
-        // console.log('PJASSETS ->', pjAssets);
-        pjAssetsId = pjAssets?.map((asset: any) => asset.id);
-        // console.log('PJASSETSID ->', pjAssetsId);
+    this.isLoading = true;
 
-        let realtimeData = null;
-        if (pjAssetsId) {
-          realtimeData = await this.realtimeService.getRealtimeData({
-            projectId: project.item.id,
-            assets: pjAssetsId,
-          });
-          // console.log('REALTIMEDATA ->', realtimeData);
-        }
+    try {
+      this.dados = await Promise.all(
+        this.projects.map(async (project: any) => {
+          try {
+            const lastRealTime = await this.realtimeService.getLastRealTime(
+              project.item.id
+            );
+            if (lastRealTime !== undefined && lastRealTime !== null) {
+              project.item.lastRealTime = lastRealTime.project.lastRealTime;
+            }
 
-        const d = {
-          project: project,
-          assets: realtimeData || [],
-        };
-        this.dados[index] = d;
-      } catch (e) {
-        const d = {
-          project: project,
-          assets: [],
-        };
-        this.dados[index] = d;
-      }
-    });
-    this.viewIndustryService.setDataViewIndustry(this.dados);
-    console.log(this.dados)
-    this.isLoading = false;
+            const pjAssets = await this.realtimeService.getProjectAssets(
+              project.item.id
+            );
+            const pjAssetsId = pjAssets?.map((asset: any) => asset.id) ?? [];
+            const realtimeData = await this.realtimeService.getRealtimeData({
+              projectId: project.item.id,
+              assets: pjAssetsId,
+            });
+
+            return {
+              project,
+              assets: realtimeData || [],
+            };
+          } catch (e) {
+            return {
+              project,
+              assets: [],
+            };
+          }
+        })
+      );
+
+      this.viewIndustryService.setDataViewIndustry(this.dados);
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   selectProject(projectId: string) {
