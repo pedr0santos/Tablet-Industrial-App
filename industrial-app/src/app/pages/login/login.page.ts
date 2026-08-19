@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
     ) {}
 
     async ngOnInit() {
-        if (await this.auth.isAuthenticated) {
+        if (await this.auth.isAuthenticated()) {
             this.storage.clear();
             this.storage.clearAll();
             this.viewIndustryService.setDataViewIndustry([]);
@@ -84,8 +84,8 @@ export class LoginPage implements OnInit {
         const password = this.loginForm?.get('password')?.value;
 
         this.accountService.login(username, password).subscribe({
-            next: (response:any) => {
-                this.auth.login(
+            next: async (response:any) => {
+                await this.auth.login(
                     response.token,
                     response.visualization,
                     response.email,

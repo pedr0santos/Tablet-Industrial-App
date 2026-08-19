@@ -13,25 +13,25 @@ export class RealtimeService {
     private appApi: AppApiService
   ) {}
 
-  getRealtimeData(body: IGetRealtimeData): Promise<any> {
+  async getRealtimeData(body: IGetRealtimeData): Promise<any> {
     return this.http
-      .post(`${environment.BASE_URL}/realtime-data`, body, this.appApi.getHeaders())
+      .post(`${environment.BASE_URL}/realtime-data`, body, await this.appApi.getHeaders())
       .toPromise();
   }
 
-  getLastRealTime(idProject: string): Promise<any> {
+  async getLastRealTime(idProject: string): Promise<any> {
     return this.http
-      .get(`${environment.BASE_URL}/monitoring-reports/lastUpdate/${idProject}`, this.appApi.getHeaders())
+      .get(`${environment.BASE_URL}/monitoring-reports/lastUpdate/${idProject}`, await this.appApi.getHeaders())
       .toPromise();
   }
 
-  getProjectAssets(id: string): Promise<any> {
+  async getProjectAssets(id: string): Promise<any> {
     return this.http
-      .get(`${environment.BASE_URL}/asset-groupList/${id}`, this.appApi.getHeaders())
+      .get(`${environment.BASE_URL}/asset-groupList/${id}`, await this.appApi.getHeaders())
       .toPromise();
   }
 
-  updateFuelMin(
+  async updateFuelMin(
     projectId: string,
     body: {
       idMtb1: string;
@@ -41,7 +41,7 @@ export class RealtimeService {
     }
   ): Promise<any> {
     return this.http
-      .put(`${environment.BASE_URL}/asset-groupUpdateFuelMin/${projectId}`, body, this.appApi.getHeaders())
+      .put(`${environment.BASE_URL}/asset-groupUpdateFuelMin/${projectId}`, body, await this.appApi.getHeaders())
       .toPromise();
   }
 }

@@ -17,13 +17,13 @@ export class AccountService {
 
     public async user(userId: string): Promise<any> {
         return this.http
-            .get<any>(`${environment.BASE_URL}/user/${userId}`, this.appApi.getHeaders())
+            .get<any>(`${environment.BASE_URL}/user/${userId}`, await this.appApi.getHeaders())
             .toPromise();
     }
 
     public async unit(unitId: string): Promise<any> {
         return this.http
-            .get<any>(`${environment.BASE_URL}/unit/${unitId}`, this.appApi.getHeaders())
+            .get<any>(`${environment.BASE_URL}/unit/${unitId}`, await this.appApi.getHeaders())
             .toPromise();
     }
 
@@ -38,13 +38,13 @@ export class AccountService {
         });
     }
 
-    public updatePassword(id: string, password: string) {
+    public async updatePassword(id: string, password: string) {
         const body = {
             password,
         };
 
         return this.http
-            .put<any>(`${environment.BASE_URL}/user/${id}`, body, this.appApi.getHeaders())
+            .put<any>(`${environment.BASE_URL}/user/${id}`, body, await this.appApi.getHeaders())
             .toPromise();
     }
 }

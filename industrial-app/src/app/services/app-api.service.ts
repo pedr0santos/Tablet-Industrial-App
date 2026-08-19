@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth';
-const access_token = '';
 
 @Injectable({
     providedIn: 'root',
@@ -9,20 +8,23 @@ const access_token = '';
 export class AppApiService {
     constructor(private auth: AuthService) {}
 
-    public getHeaders() {
+    public async getHeaders() {
+        const token = await this.auth.getToken();
+
         return {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + this.auth.getToken(),
+                ...(token ? { Authorization: `Bearer ${token}` } : {}),
             }),
         };
     }
 
-    public getAuthorization() {
-        return 'Bearer ' + access_token;
+    public async getAuthorization() {
+        const token = await this.auth.getToken();
+        return token ? `Bearer ${token}` : '';
     }
 
-    public tokenAuth(value: string = access_token) {
+    public tokenAuth(value: string) {
         return {
             headers: {
                 'x-access-token': value,
