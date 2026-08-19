@@ -17,6 +17,7 @@ export class AuthService {
   private readonly EMAIL = 'email';
   private readonly IDUSER = 'user';
   private readonly CHANGEDPASSWORD = 'changedPassword';
+  private readonly UNITID = 'unitId';
 
   constructor(
     private router: Router,
@@ -30,12 +31,14 @@ export class AuthService {
     token: string,
     visualization: string,
     email: string,
-    user: string
+    user: string,
+    unitId: string
   ): Promise<void> {
     await Preferences.set({ key: this.TOKEN, value: token });
     await Preferences.set({ key: this.VISUALIZATION, value: visualization });
     await Preferences.set({ key: this.EMAIL, value: email });
     await Preferences.set({ key: this.IDUSER, value: user });
+    await Preferences.set({ key: this.UNITID, value: unitId });
 
     this.loggedIn.next(token);
   }

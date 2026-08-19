@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  BASE_URL : `https://radcomtec.com.br:4001/api`
+  BASE_URL : `https://radcomtec.com.br/api/api`
 };
 
 // export const BASE_URL = `https://radcomtec.com.br:4001/api`;

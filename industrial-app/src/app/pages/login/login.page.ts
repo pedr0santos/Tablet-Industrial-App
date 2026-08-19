@@ -89,13 +89,16 @@ export class LoginPage implements OnInit {
                     response.token,
                     response.visualization,
                     response.email,
-                    response.userId
+                    response.userId,
+                    response.unit[0].id
                 );
+
                 this.storage.setChangedPassword(!response.temporaryPassword);
                 this.isFirstAccess = response.temporaryPassword;
                 this.loginForm?.reset();
                 this.changePasswordForm?.reset();
                 this.userId = response.userId;
+                this.unitId = response.unit[0].id;
                 this.visualization = response.visualization;
                     this.router.navigate(['/view-industry'], { replaceUrl: true });
             },
@@ -108,7 +111,6 @@ export class LoginPage implements OnInit {
                     this.userId !== undefined &&
                     this.visualization !== 'radcom_admin'
                 ) {
-                  this.unitId = '8195ad05-b80f-4ddf-bdc8-cf64b85f232f';
                     await this.loadUserData();
                 }
                 this.loginForm?.reset();
@@ -122,7 +124,6 @@ export class LoginPage implements OnInit {
         await this.accountService
             .user(this.userId || '')
             .then((resp:any) => {
-                this.unitId = '8195ad05-b80f-4ddf-bdc8-cf64b85f232f';
             })
             .catch((erro:any) => {
                 console.error('Falha ao pesuisar pelo usuário logado: ', erro);
